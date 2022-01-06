@@ -28,10 +28,18 @@ class HomeController extends Controller
     {
         $users = User::all();
         return view('home', compact('users'));
+
+        $migrations = Migration::all();
     }
 
     public function getUsers()
-{
-    return DataTables::of(User::query())->make(true);
-}
+    {
+        return DataTables::of(User::query())
+        ->addIndexColumn()
+        ->addColumn('action', function(User $users){
+            return view('action', compact('users'));
+        })
+        ->make(true);
+        // return DataTables::of(Migration::query())->make(true);
+    }
 }

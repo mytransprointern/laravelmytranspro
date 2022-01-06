@@ -20,10 +20,23 @@
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Created At</th>
-                                <th>Updated At</th>
+                                <th>Tel Number</th>
+                                <th>Action</th>
+                                {{-- <th>Migration ID</th> --}}
                             </tr>
                         </thead>
+                        
+                        {{-- <tr>
+                            <td colspan="6">                       
+                                <form method="POST" action="/viewallagreements/{{ $users->id }}">
+                                    @csrf {{ method_field("DELETE") }}
+                                    <button type="submit" class="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr> --}}
+
                     </table>
                 </div>
             </div>
